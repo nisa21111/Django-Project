@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ro">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stil.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+    <title>{% block title %}Pagina mea{% endblock %}</title>
+    </head>
+    <body>
+        <header>
+            <h1>Site-ul meu</h1>
+            <nav>
+    <ul class="meniu">
+        <li>
+            <a href="{% url 'index' %}">Prima pagina</a>
+            <ul class="submeniu">
+                <li><a href="{% url 'index' %}#orar">Orar de lucru</a></li>
+                <li><a href="{% url 'index' %}#promotii">Promotii curente</a></li>
+            </ul>
+        </li>
+        <li><a href="{% url 'info' %}">Informatii</a></li>
+        <li><a href="{% url 'istoric' %}">Istoric</a></li>
+        <li><a href="{% url 'despre' %}">Despre</a></li>
+        <li>
+            <a href="{% url 'log' %}">Log</a>
+            <ul class="submeniu">
+                <li><a href="{% url 'log' %}">Toate accesarile</a></li>
+                <li><a href="{% url 'log' %}?ultimele=5">Ultimele 5</a></li>
+                <li><a href="{% url 'log' %}?accesari=nr">Numar accesari</a></li>
+                <li><a href="{% url 'log' %}?tabel=tot">Tabel complet</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Exemple</a>
+            <ul class="submeniu">
+                <li><a href="{% url 'exemplu_template' %}">Exemplu template</a></li>
+                <li><a href="{% url 'exemplu_template2' %}">Exemplu template 2</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+        </header>
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+        <footer>
+    <p>© {{ an_curent }} {{ firma.nume }} - infiintata in {{ firma.an_infiintare }}. Toate drepturile rezervate.</p>
+    <p>Tel: {{ firma.telefon }} | Email: {{ firma.email }}</p>
+    <p>Sediu: {{ firma.adresa }} </p>
+</footer>
+    </body>
+</html>

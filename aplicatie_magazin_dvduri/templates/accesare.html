@@ -1,0 +1,13 @@
+{% extends "baza.html" %}
+{% block title %}Log{% endblock %}
+{% block content %}
+    <h1>Accesarea {{ a.id }}</h1>
+    <ul>
+        <li>ID: {{ a.id }}</li>
+        <li>IP: {{ a.ip_client }}</li>
+        <li>URL: {{ a.string_url }}</li>
+        <li>Pagina: {{ a.pagina }}</li>
+        <li>Parametri: {{ a.parametrii }}</li>
+        <li>Data si ora: {{ data_ora }}</li>
+    </ul>
+{% endblock %}

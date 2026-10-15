@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background: bisque url("../imagini/fundal.jpg") center / cover fixed;
+}
+
+header, footer {
+    background-color: #5c3d2e;
+    color: #fff5e6;
+    padding: 12px 24px;
+}
+
+footer {
+    text-align: center;
+}
+
+main {
+    max-width: 1000px;
+    margin: 24px auto;
+    padding: 24px;
+    background-color: rgba(255, 250, 240, 0.9);
+}
+
+.imagine {
+    display: block;
+    max-width: 100%;
+    margin: 16px auto;
+}
+
+/* meniu derulant */
+.meniu, .submeniu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.meniu > li {
+    display: inline-block;
+    position: relative;
+}
+
+.meniu a {
+    display: block;
+    padding: 10px 16px;
+    color: #fff5e6;
+    text-decoration: none;
+}
+
+.meniu a:hover {
+    background-color: #8b5a3c;
+}
+
+.submeniu {
+    display: none;
+    position: absolute;
+    min-width: 200px;
+    background-color: #7a4e35;
+    z-index: 10;
+}
+
+.meniu li:hover > .submeniu {
+    display: block;
+}
+
+/* telefoane: meniu vertical */
+@media (max-width: 600px) {
+    .meniu > li {
+        display: block;
+    }
+
+    .submeniu {
+        position: static;
+    }
+
+    main {
+        margin: 8px;
+        padding: 12px;
+    }
+}

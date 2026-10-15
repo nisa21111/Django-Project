@@ -1,0 +1,21 @@
+{% extends "baza.html" %}
+{% load static %}
+{% block title %}Prima pagina{% endblock %}
+{% block content %}
+<h2>Prima pagina</h2>
+<img src="{% static 'imagini/principala.jpg' %}" alt="Magazin de DVD-uri" class="imagine">
+<p>Magazin de inchiriat si cumparat DVD-uri cu filme.</p>
+<p>{{a}}</p>
+<p>IP: {{ ip }}</p>
+<p>{{ param }}</p>
+<section id="orar">
+    <h3>Orar de lucru</h3>
+    <p>Luni - Vineri: 10:00 - 20:00</p>
+    <p>Sambata: 10:00 - 14:00</p>
+</section>
+
+<section id="promotii">
+    <h3>Promotii curente</h3>
+    <p>La 3 DVD-uri inchiriate, al patrulea e gratuit.</p>
+</section>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "baza.html" %}
+{% block title %}Log{% endblock %}
+{% block content %}
+    <h1>Log</h1>
+
+    <h2>Parametri</h2>
+    <p>Numar parametri primiti: {{ parametrii|length }}</p>
+    <ul>
+        {% for p in parametrii %}<li>{{ p }}</li>{% endfor %}
+    </ul>
+
+    {% if nr is not None %}
+    <h2>Numar accesari</h2>
+    <p>De la pornirea serverului: {{ nr }}</p>
+    {% endif %}
+
+    {% if detalii %}
+    <h2>Detalii accesari</h2>
+    <ul>
+        {% for d in detalii %}<li>{{ d }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if coloane %}
+    <table border="1">
+        <tr>{% for c in coloane %}<th>{{ c }}</th>{% endfor %}</tr>
+        {% for rand in randuri %}
+        <tr>{% for valoare in rand %}<td>{{ valoare }}</td>{% endfor %}</tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <ul>
+        {% for a in accesari %}
+        <li><a href="/aplicatie_magazin_dvduri/accesare{{ a.id }}">#{{ a.id }}</a> - {{ a.string_url }} - {{ a.ip_client }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if eroare %}<p style="color:red">{{ eroare }}</p>{% endif %}
+
+    {% if mai_mult %}
+    <p>Cea mai accesata pagina: {{ mai_mult }}</p>
+    <p>Cea mai putin accesata pagina: {{ mai_putin }}</p>
+    {% endif %}
+{% endblock %}
