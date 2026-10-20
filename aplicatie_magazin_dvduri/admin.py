@@ -1,6 +1,4 @@
-
-# Register your models here.
 from django.contrib import admin
-from .models import Ambalaj
+from .models import Gen, Studio, Distribuitor, Magazin, Raion, Eveniment, Film
 
-admin.site.register(Ambalaj)
+admin.site.register([Gen, Studio, Distribuitor, Magazin, Raion, Eveniment, Film])
